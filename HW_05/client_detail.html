@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Информация о Клиенте: {{ client.name }}</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 20px; }
+        .client-info { background-color: #f9f9f9; padding: 20px; margin-top: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .client-info h1 { color: #333; }
+        .info-label { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="client-info">
+        <h1>Клиент: {{ client.name }}</h1>
+        <p><span class="info-label">Email:</span> {{ client.email }}</p>
+        <p><span class="info-label">Телефон:</span> {{ client.phone_number }}</p>
+        <p><span class="info-label">Адрес:</span> {{ client.address }}</p>
+        <p><span class="info-label">Дата регистрации:</span> {{ client.registration_date }}</p>
+    </div>
+</body>
+</html>
