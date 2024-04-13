@@ -1,21 +1,20 @@
 # flake8: noqa
-
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-s31s+++uub^$^5r*2^p*i%iimif31gzyh*#_f7ch01a)_v=gg4'
-
+SECRET_KEY = os.getenv('SECRET_KEY', 'asadadsa')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
+    'Castilllian.pythonanywhere.com',
 ]
 
-INTERNAL_IPS = [
-    '127.0.0.1',
-]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -24,12 +23,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop.apps.ShopConfig',
-    'debug_toolbar'
+    'shop.apps.ShopConfig'
 ]
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -39,7 +36,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'HW_05.urls'
+ROOT_URLCONF = 'HW_06.urls'
 
 TEMPLATES = [
     {
@@ -57,7 +54,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'HW_05.wsgi.application'
+WSGI_APPLICATION = 'HW_06.wsgi.application'
 
 
 DATABASES = {
@@ -83,7 +80,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
@@ -93,6 +90,7 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR/'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
